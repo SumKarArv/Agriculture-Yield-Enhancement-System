@@ -1,0 +1,118 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf%}
+{% block doc %}
+    {% block html %}
+    
+        {% block head %}
+        {{ super() }}
+        <title>{% block title %}Forgot Password{% endblock %} Login</title>
+            {% block metas %}
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            {% endblock %}
+        
+            {% block styles %}
+                <link rel="icon" type="image/png" href="/static/Login_v19/images/icons/favicon.ico"/>
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/bootstrap/css/bootstrap.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/animate/animate.css">
+                <!--===============================================================================================-->	
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/css-hamburgers/hamburgers.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/animsition/css/animsition.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/select2/select2.min.css">
+                <!--===============================================================================================-->	
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/daterangepicker/daterangepicker.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/css/util.css">
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/css/main.css">
+            {% endblock %}
+        {% endblock %}
+
+        {% block content %}
+            <div id="google_translate_element"></div>
+            <div class="limiter">
+                    <div class="container-login100">
+                        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                            <form class="login100-form validate-form", method="POST", action="">
+                                {{ form.hidden_tag() }}
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        <ul class="flashes">
+                                            {% for message in messages %}
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                {{message}}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endwith %}
+                                <span class="login100-form-title p-b-33">
+                                   Forgot Password
+                                </span>
+            
+                                <label class="label">{{form.email.label()}}</label>
+                                <div class="wrap-input100  validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <input class="input100" type="email" name="email" placeholder="">
+                                    <span class="focus-input100-1"></span>
+                                    <span class="focus-input100-2"></span>
+                                </div>
+
+            
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input class="login100-form-btn" type="submit" value="Send Password">
+                                </div>
+            
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        {% endblock %}
+
+
+        {% block scripts %}    
+            <script src="/static/Login_v19/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/animsition/js/animsition.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/bootstrap/js/popper.js"></script>
+                <script src="/static/Login_v19/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/select2/select2.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/daterangepicker/moment.min.js"></script>
+                <script src="/static/Login_v19/vendor/daterangepicker/daterangepicker.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/countdowntime/countdowntime.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/js/main.js"></script>
+                <script src="/static/Login_v19/js/main.js"></script>
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">  
+                    function googleTranslateElementInit() {  
+                        new google.translate.TranslateElement( 
+                            {pageLanguage: 'en'},  
+                            'google_translate_element' 
+                        );  
+                    }  
+                </script>  
+                  
+                <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> 
+                </script>
+        {super()}}
+        {% endblock %}
+
+
+    {% endblock %}
+{% endblock %}
+<!-- end document-->

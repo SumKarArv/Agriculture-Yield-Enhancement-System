@@ -1,0 +1,129 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block doc %}
+    {% block html %}
+    
+        {% block head %}
+        {{ super() }}
+        <title>{% block title %}{{ "Login"|translate("kn") }}{% endblock %} Login</title>
+            {% block metas %}
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            {% endblock %}
+        
+            {% block styles %}
+                <link rel="icon" type="image/png" href="/static/Login_v19/images/icons/favicon.ico"/>
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/bootstrap/css/bootstrap.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/animate/animate.css">
+                <!--===============================================================================================-->	
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/css-hamburgers/hamburgers.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/animsition/css/animsition.min.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/select2/select2.min.css">
+                <!--===============================================================================================-->	
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/vendor/daterangepicker/daterangepicker.css">
+                <!--===============================================================================================-->
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/css/util.css">
+                    <link rel="stylesheet" type="text/css" href="/static/Login_v19/css/main.css">
+            {% endblock %}
+        {% endblock %}
+
+        {% block content %}
+            <div id="google_translate_element"></div>
+            <div class="limiter">
+                    <div class="container-login100">
+                        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                            <form class="login100-form validate-form", method="POST", action="">
+                                {{ form.hidden_tag() }}
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        <ul class="flashes">
+                                            {% for message in messages %}
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                {{message}}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endwith %}
+                                <span class="login100-form-title p-b-33">
+                                    Account Login
+                                </span>
+            
+                                <label class="label">{{ form.username.label|translate("kn") }}</label>
+                                <div class="wrap-input100 validate-input" data-validate = "Username is required">
+                                    <input class="input100" type="text" name="username" placeholder="">
+                                    <span class="focus-input100-1"></span>
+                                    <span class="focus-input100-2"></span>
+                                </div>
+            
+                                <label class="label">{{ form.password.label|translate("kn") }}</label>
+                                <div class="wrap-input100  validate-input" data-validate="Password is required">
+                                    {{form.password }}
+                                    <span class="focus-input100-1"></span>
+                                    <span class="focus-input100-2"></span>
+                                </div>
+            
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input class="login100-form-btn" type="submit" value="Login">
+                                </div>
+            
+                                <div class="text-center p-t-45 p-b-4">
+                                    <span class="txt1">
+                                        {{ "Forgot"|translate("kn") }}
+                                    </span>
+            
+                                    <a href="{{ url_for('forgotpass') }}" class="txt2 hov1">
+                                        {{ "Username/Password?"|translate("kn") }}
+                                    </a>
+                                </div>
+            
+                                <div class="text-center">
+                                    <span class="txt1">
+                                        {{ "Create an account?"|translate("kn") }}
+                                    </span>
+            
+                                    <a href="{{ url_for('register') }}" class="txt2 hov1">
+                                        {{ "Sign Up"|translate("kn") }}
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        {% endblock %}
+
+
+        {% block scripts %}    
+            <script src="/static/Login_v19/vendor/jquery/jquery-3.2.1.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/animsition/js/animsition.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/bootstrap/js/popper.js"></script>
+                <script src="/static/Login_v19/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/select2/select2.min.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/daterangepicker/moment.min.js"></script>
+                <script src="/static/Login_v19/vendor/daterangepicker/daterangepicker.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/vendor/countdowntime/countdowntime.js"></script>
+            <!--===============================================================================================-->
+                <script src="/static/Login_v19/js/main.js"></script>
+        {{super()}}
+        {% endblock %}
+
+
+    {% endblock %}
+{% endblock %}
+<!-- end document-->

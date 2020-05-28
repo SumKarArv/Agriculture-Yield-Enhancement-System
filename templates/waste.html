@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+
+{%block title%}
+Dont Know
+{% endblock%}
+{%block content%}
+<form method="POST" action="/">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}<br>
+    {{ form.username.label }} {{ form.username(size=20) }}<br>
+    {{ form.password.label }} {{ form.password(size=20) }}<br>
+    <input type="submit" class="btn btn-success" value="Go">
+</form>
+{%endblock%}

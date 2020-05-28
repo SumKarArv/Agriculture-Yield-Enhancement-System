@@ -5,7 +5,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
 host="localhost",
 user="root",
-passwd="Alohomora")
+passwd="SQL_Password")
 mycursor = mydb.cursor()
 
 #mycursor.execute("CREATE DATABASE test2")

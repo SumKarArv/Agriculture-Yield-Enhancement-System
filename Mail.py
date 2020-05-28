@@ -17,7 +17,7 @@ class SendMail:
         s.starttls() 
         
         # Authentication 
-        s.login("karthikks.cs17@rvce.edu.in", "Karu@1101F") 
+        s.login("Sender_Email_ID", "Password") 
         
         # message to be sent
         message=str
@@ -25,7 +25,7 @@ class SendMail:
         #print (m)
         
         # sending the mail 
-        s.sendmail("karthikks.cs17@rvce.edu.in", email, message) 
+        s.sendmail("Receiver_email_id", email, message) 
         
         # terminating the session 
         s.quit() 
